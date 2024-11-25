@@ -12,4 +12,4 @@ DockerfileRootPwd just builds from the main image adding the root pwd that is th
 For starting the environment:
 - `cd compose`
 - `cp env-sample.txt .env`, then edit it to fit your needs.
-- 'docker compose up -d`
+- `docker compose up -d`
