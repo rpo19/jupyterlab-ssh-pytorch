@@ -12,6 +12,7 @@ services:
       - ./notebooks:/workspace/notebooks
       - /mnt/data/rpozzi-jupyterlab:/workspace/data
       - ./logs:/var/log
+      - ./home:/root
     environment:
       JUPYTER_TOKEN: $JUPYTER_TOKEN
     deploy:

@@ -10,6 +10,7 @@ RUN mkdir -p /workspace/data
 
 VOLUME /workspace/data
 VOLUME /var/log
+VOLUME /root
 
 RUN apt-get update
 RUN apt-get install -y ${APT_PACKAGES}
