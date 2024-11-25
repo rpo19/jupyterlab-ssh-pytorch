@@ -4,6 +4,11 @@ Container with OpenSSH, JupyterLab, PyTorch to play with AI, ML, with GPUs.
 ## Main folder
 Dockefile and files for building the docker image.
 
+## Make release
+```
+make release VERSION=2.5.1-cuda12.4-cudnn9-runtime.1
+```
+
 ## Install
 To execute the environment you could either clone the repository or download and extract one of the releases. 
 
