@@ -1,0 +1,5 @@
+FROM rpozzi/jupyterlab-ssh-pytorch:2.5.1-cuda12.4-cudnn9-runtime
+
+ARG ROOT_PASSWORD
+
+RUN bash -c 'echo "root:$ROOT_PASSWORD" | chpasswd'
