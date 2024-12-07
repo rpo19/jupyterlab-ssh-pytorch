@@ -10,7 +10,7 @@ services:
       - $JUPYTERLAB_LISTEN_ADDR_SSH:22
     volumes:
       - ./notebooks:/workspace/notebooks
-      - /mnt/data/rpozzi-jupyterlab:/workspace/data
+      - $DATAPATH:/workspace/data
       - ./logs:/var/log
       - ./home:/root
     environment:
