@@ -15,6 +15,7 @@ services:
       - ./home:/root
     environment:
       JUPYTER_TOKEN: $JUPYTER_TOKEN
+    restart: $RESTART
     deploy:
       resources:
         reservations:
