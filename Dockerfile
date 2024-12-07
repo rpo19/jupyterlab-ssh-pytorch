@@ -2,7 +2,7 @@ ARG PYTORCH_VERSION=2.5.1-cuda12.4-cudnn9-runtime
 
 FROM pytorch/pytorch:${PYTORCH_VERSION}
 
-ARG APT_PACKAGES="supervisor openssh-server openssh-sftp-server"
+ARG APT_PACKAGES="supervisor openssh-server openssh-sftp-server git python3 python-is-python3 ppython3-venv tmux vim"
 ARG PIP_PACKAGES="jupyterlab pandas numpy requests"
 
 RUN mkdir -p /workspace/notebooks
@@ -20,7 +20,7 @@ RUN python -m pip install --upgrade pip
 RUN python -m pip install ${PIP_PACKAGES}
 
 RUN mkdir /var/run/sshd && chmod 0755 /var/run/sshd
-COPY ssh_root_login.conf /etc/ssh/sshd_config.d/ssh_root_login.conf 
+COPY ssh_root_login.conf /etc/ssh/sshd_config.d/ssh_root_login.conf
 
 COPY supervisord.conf /etc/supervisord.conf
 
