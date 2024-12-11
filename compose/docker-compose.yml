@@ -1,3 +1,5 @@
+# DEPRECATED: better creating docker container and then running it. so it does not deleted automatically
+# update only on forced action
 services:
   jupyter:
     build:
@@ -9,8 +11,7 @@ services:
       - $JUPYTERLAB_LISTEN_ADDR:8080
       - $JUPYTERLAB_LISTEN_ADDR_SSH:22
     volumes:
-      - ./notebooks:/workspace/notebooks
-      - $DATAPATH:/workspace/data
+      - $DATAPATH:/data
       - ./logs:/var/log
       - ./home:/root
     environment:
