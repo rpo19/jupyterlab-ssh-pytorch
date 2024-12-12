@@ -37,4 +37,4 @@ WORKDIR /root
 
 EXPOSE 8080
 EXPOSE 22
-CMD ["supervisord", "-c", "/etc/supervisor/supervisord.conf"]
+CMD ["bash", "-c", "exec supervisord -c /etc/supervisor/supervisord.conf"]
