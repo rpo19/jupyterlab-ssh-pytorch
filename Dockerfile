@@ -2,7 +2,7 @@ ARG PYTORCH_VERSION=2.5.1-cuda12.4-cudnn9-runtime
 
 FROM pytorch/pytorch:${PYTORCH_VERSION}
 
-ARG APT_PACKAGES="supervisor openssh-server openssh-sftp-server git python3 python-is-python3 python3-venv tmux vim fish"
+ARG APT_PACKAGES="supervisor openssh-server openssh-sftp-server git python3 python-is-python3 python3-venv tmux vim fish locales"
 ARG PIP_PACKAGES="jupyterlab ipykernel"
 
 RUN mkdir -p /workspace/notebooks
@@ -17,6 +17,9 @@ RUN unminimize # users will login to this system
 RUN apt-get update
 RUN apt-get install -y ${APT_PACKAGES}
 RUN rm -rf /var/lib/apt/lists/*
+
+RUN sed -i -e '/en_US.UTF-8/s/^# //g' -e '/it_IT.UTF-8/s/^# //g' /etc/locale.gen
+RUN locale-gen
 
 RUN python -m pip install --upgrade pip
 RUN python -m pip install ${PIP_PACKAGES}
