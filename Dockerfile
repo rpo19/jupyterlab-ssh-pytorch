@@ -12,6 +12,8 @@ VOLUME /workspace/data
 VOLUME /var/log
 VOLUME /root
 
+RUN unminimize # users will login to this system
+
 RUN apt-get update
 RUN apt-get install -y ${APT_PACKAGES}
 RUN rm -rf /var/lib/apt/lists/*
