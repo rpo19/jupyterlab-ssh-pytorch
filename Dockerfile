@@ -33,6 +33,8 @@ COPY supervisord.conf /etc/supervisor/supervisord.conf
 RUN /opt/conda/bin/conda init bash
 RUN /opt/conda/bin/conda init fish
 
+RUN curl -fsSL https://code-server.dev/install.sh | sh
+
 WORKDIR /root
 
 EXPOSE 8080

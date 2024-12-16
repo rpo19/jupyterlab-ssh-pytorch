@@ -26,4 +26,5 @@ For starting the environment:
     - save the container creation command and also the ansible task
 - Allow podman in docker?
     - Follow Rootful Podman in Docker without `--privileged` at [RedHat](https://www.redhat.com/en/blog/podman-inside-container)
-- Install code server for a browser vscode instance
+- Install code server for a browser vscode instance [OK]
+    - add http proxy for serving http on same port?
