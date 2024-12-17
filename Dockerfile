@@ -35,8 +35,10 @@ RUN /opt/conda/bin/conda init fish
 
 RUN curl -fsSL https://code-server.dev/install.sh | sh
 
+RUN mkdir -p /etc/environment.supervisor.d/
+
 WORKDIR /root
 
 EXPOSE 8080
 EXPOSE 22
-CMD ["bash", "-c", "exec supervisord -c /etc/supervisor/supervisord.conf"]
+CMD ["bash", "-c", "source /etc/environment.supervisor.d/*; exec supervisord -c /etc/supervisor/supervisord.conf"]
