@@ -27,3 +27,4 @@ For starting the environment:
 - Allow podman in docker?
     - Follow Rootful Podman in Docker without `--privileged` at [RedHat](https://www.redhat.com/en/blog/podman-inside-container)
 - Install code server for a browser vscode instance
+- Move to pytorch devel: some packages will require nvcc
