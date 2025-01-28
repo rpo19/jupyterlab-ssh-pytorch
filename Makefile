@@ -3,10 +3,9 @@ VERSION ?= latest
 
 # The release target
 release:
-	tar -C compose -czf jupyterlab-ssh-pytorch-compose$(VERSION).tar.gz \
-		docker-compose.yml \
-		env-sample.txt \
-		DockerfileRootPwd
+	tar -C docker -czf jupyterlab-ssh-pytorch-docker-$(VERSION).tar.gz \
+		create.sh \
+		env-sample.txt
 
 # Docker build target
 docker:
