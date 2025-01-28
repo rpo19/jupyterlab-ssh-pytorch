@@ -22,6 +22,8 @@ RUN locale-gen
 RUN python -m pip install --upgrade pip
 RUN python -m pip install ${PIP_PACKAGES}
 
+RUN jupyter lab --generate-config
+
 RUN mkdir /var/run/sshd && chmod 0755 /var/run/sshd
 COPY ssh_root_login.conf /etc/ssh/sshd_config.d/ssh_root_login.conf
 
