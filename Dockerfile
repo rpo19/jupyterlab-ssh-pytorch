@@ -30,8 +30,8 @@ COPY ssh_root_login.conf /etc/ssh/sshd_config.d/ssh_root_login.conf
 RUN mkdir -p /etc/supervisor/
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 
-RUN mkdir -p /root/.vnc
-COPY xstartup /root/.vnc/xstartup
+RUN mkdir -p /root/.config/openbox
+COPY autostart /root/.config/openbox/autostart
 
 RUN /opt/conda/bin/conda init bash
 RUN /opt/conda/bin/conda init fish
