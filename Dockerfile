@@ -35,6 +35,7 @@ COPY xstartup /root/.vnc/xstartup
 
 RUN /opt/conda/bin/conda init bash
 RUN /opt/conda/bin/conda init fish
+RUN /opt/conda/bin/python -m ipykernel install --user --name base --display-name "Conda (base)"
 
 RUN mkdir -p /etc/environment.supervisor.d/
 
