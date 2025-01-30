@@ -14,6 +14,8 @@ VOLUME /root
 
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y ${APT_PACKAGES}
+RUN add-apt-repository ppa:flexiondotorg/nvtop
+RUN apt-get install -y nvtop
 RUN rm -rf /var/lib/apt/lists/*
 
 RUN sed -i -e '/en_US.UTF-8/s/^# //g' -e '/it_IT.UTF-8/s/^# //g' /etc/locale.gen
